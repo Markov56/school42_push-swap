@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   big_sort.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/10 18:29:06 by rmarkov           #+#    #+#             */
+/*   Updated: 2025/12/10 18:29:07 by rmarkov          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	keep_three_in_a(t_stack **stack_a, t_stack **stack_b)
@@ -37,7 +49,6 @@ static void	final_rotations(t_stack **stack_a)
 	size = count_stack_size(*stack_a);
 	update_current_index(stack_a);
 	min_pos = find_min_index(*stack_a);
-
 	if (min_pos > size / 2)
 	{
 		moves = size - min_pos;
@@ -56,13 +67,11 @@ static void	final_rotations(t_stack **stack_a)
 			moves--;
 		}
 	}
-
 }
 
 void	big_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	keep_three_in_a(stack_a, stack_b);
-	
 	while (*stack_b)
 	{
 		find_targets_in_a(stack_a, stack_b);

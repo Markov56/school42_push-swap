@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/10 18:28:19 by rmarkov           #+#    #+#             */
+/*   Updated: 2025/12/10 18:28:21 by rmarkov          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	swap(t_stack **stack)
@@ -7,26 +19,10 @@ static void	swap(t_stack **stack)
 
 	first = *stack;
 	second = first->next;
-
 	first->next = second->next;
 	second->next = first;
 	*stack = second;
 }
-
-// static void	swap(t_stack *stack)
-// {
-// 	int	temp_num;
-// 	int	temp_rank;
-
-// 	if (!stack || !stack->next)
-// 		return ;
-// 	temp_num = stack->num;
-// 	stack->num = stack->next->num;
-// 	stack->next->num = temp_num;
-// 	temp_rank = stack->sorted_index;
-// 	stack->sorted_index = stack->next->sorted_index;
-// 	stack->next->sorted_index = temp_rank;
-// }
 
 void	do_swap(t_stack **stack_a, t_stack **stack_b, char *op)
 {

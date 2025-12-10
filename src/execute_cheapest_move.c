@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   execute_cheapest_move.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/10 18:29:27 by rmarkov           #+#    #+#             */
+/*   Updated: 2025/12/10 18:29:29 by rmarkov          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	rotate_both(t_stack **stack_a, t_stack **stack_b,
@@ -58,7 +70,7 @@ static void	finish_rotate_b(t_stack **stack_b, int *cost_b)
 
 void	execute_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *current;
+	t_stack	*current;
 	int		min_cost;
 	int		cost_a;
 	int		cost_b;

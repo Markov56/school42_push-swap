@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   input_validator.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/10 18:30:08 by rmarkov           #+#    #+#             */
+/*   Updated: 2025/12/10 18:30:10 by rmarkov          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	is_num(char *str)
@@ -51,7 +63,7 @@ static int	has_duplicates(char **args)
 		{
 			if (ft_strcmp(args[i], args[j]) == 0)
 				return (1);
-		j++;
+			j++;
 		}
 		i++;
 	}

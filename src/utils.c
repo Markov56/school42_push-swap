@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/10 18:42:50 by rmarkov           #+#    #+#             */
+/*   Updated: 2025/12/10 18:42:53 by rmarkov          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_strcmp(char *str1, char *str2)
@@ -12,7 +24,7 @@ int	ft_strcmp(char *str1, char *str2)
 
 void	ft_putstr(char *s)
 {
-	while(*s)
+	while (*s)
 	{
 		write(1, &*s, 1);
 		s++;

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/10 18:29:59 by rmarkov           #+#    #+#             */
+/*   Updated: 2025/12/10 18:30:01 by rmarkov          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static t_stack	*create_node(int value)
@@ -22,7 +34,7 @@ static void	add_back(t_stack **stack, t_stack *node)
 	t_stack	*temp;
 
 	if (!*stack)
-	{	
+	{
 		*stack = node;
 		return ;
 	}
@@ -30,7 +42,7 @@ static void	add_back(t_stack **stack, t_stack *node)
 	while (temp->next)
 		temp = temp->next;
 	temp->next = node;
-}	
+}
 
 t_stack	*init_stack(int argc, char **argv)
 {

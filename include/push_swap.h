@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/10 18:25:01 by rmarkov           #+#    #+#             */
+/*   Updated: 2025/12/10 18:25:27 by rmarkov          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -15,7 +27,7 @@ typedef struct s_stack
 	int				cost_a;
 	int				cost_b;
 	struct s_stack	*next;
-} 				t_stack;
+}				t_stack;
 
 int			validate_input(char **args);
 int			ft_strcmp(char *str1, char *str2);
@@ -38,11 +50,5 @@ void		calculate_costs(t_stack **stack_a, t_stack **stack_b);
 void		execute_cheapest_move(t_stack **stack_a, t_stack **stack_b);
 int			find_min_index(t_stack *stack_a);
 void		update_current_index(t_stack **stack);
-
-// void	calculate_move_cost(t_stack **stack_a, t_stack **stack_b);
-// void	execute_cheapest_move(t_stack **stack_a, t_stack **stack_b);
-// int	find_min_position(t_stack **stack);
-// void	big_sort(t_stack **stack_a, t_stack **stack_b);
-// int	absolute(int n);
 
 #endif

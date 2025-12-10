@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   find_targets_in_a.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/10 18:29:37 by rmarkov           #+#    #+#             */
+/*   Updated: 2025/12/10 18:29:38 by rmarkov          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	update_current_index(t_stack **stack)
@@ -25,7 +37,7 @@ static int	find_closest_bigger(t_stack *stack_a, int elem_index)
 	while (stack_a)
 	{
 		if (stack_a->sorted_index > elem_index
-		&& stack_a->sorted_index < closest)
+			&& stack_a->sorted_index < closest)
 		{
 			closest = stack_a->sorted_index;
 			target = stack_a->current_index;
