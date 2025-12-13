@@ -50,5 +50,6 @@ void		calculate_costs(t_stack **stack_a, t_stack **stack_b);
 void		execute_cheapest_move(t_stack **stack_a, t_stack **stack_b);
 int			find_min_index(t_stack *stack_a);
 void		update_current_index(t_stack **stack);
+char		**ft_split(char const *s, char c);
 
 #endif

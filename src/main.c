@@ -6,7 +6,7 @@
 /*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 18:43:11 by rmarkov           #+#    #+#             */
-/*   Updated: 2025/12/10 18:43:15 by rmarkov          ###   ########.fr       */
+/*   Updated: 2025/12/13 11:21:55 by rmarkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,5 @@ int	main(int argc, char **argv)
 	push_swap(&stack_a, &stack_b, size);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
-}
+	return (0);
+} 

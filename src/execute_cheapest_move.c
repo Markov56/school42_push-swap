@@ -17,7 +17,7 @@ static void	rotate_both(t_stack **stack_a, t_stack **stack_b,
 {
 	while (*cost_a > 0 && *cost_b > 0)
 	{
-		do_rotate(stack_a, stack_b, "rrr");
+		do_rotate(stack_a, stack_b, "rr");
 		(*cost_a)--;
 		(*cost_b)--;
 	}
@@ -57,12 +57,12 @@ static void	finish_rotate_b(t_stack **stack_b, int *cost_b)
 	{
 		if (*cost_b > 0)
 		{
-			do_rotate(stack_b, NULL, "rb");
+			do_rotate(NULL, stack_b, "rb");
 			(*cost_b)--;
 		}
 		else
 		{
-			do_rotate(stack_b, NULL, "rrb");
+			do_rotate(NULL, stack_b, "rrb");
 			(*cost_b)++;
 		}
 	}
