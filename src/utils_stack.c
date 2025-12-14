@@ -6,7 +6,7 @@
 /*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 18:41:47 by rmarkov           #+#    #+#             */
-/*   Updated: 2025/12/10 18:41:49 by rmarkov          ###   ########.fr       */
+/*   Updated: 2025/12/14 15:49:21 by rmarkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,31 @@ int	count_stack_size(t_stack *stack)
 		stack = stack->next;
 	}
 	return (count);
+}
+
+void	free_stack(t_stack **stack)
+{
+	t_stack	*temp;
+
+	if (!stack || !*stack)
+		return ;
+	while (*stack)
+	{
+		temp = (*stack)->next;
+		free(*stack);
+		*stack = temp;
+	}
+	*stack = NULL;
+}
+
+void	exit_with_error(t_stack **stack_a, t_stack **stack_b)
+{
+	if (stack_a && *stack_a)
+		free_stack(stack_a);
+	if (stack_b && *stack_b)
+		free_stack(stack_b);
+	write(2, "Error\n", 6);
+	exit(1);
 }
 
 void	assign_sorted_indexes(t_stack *stack, int size)

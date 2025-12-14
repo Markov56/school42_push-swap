@@ -6,7 +6,7 @@
 /*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 18:42:50 by rmarkov           #+#    #+#             */
-/*   Updated: 2025/12/10 18:42:53 by rmarkov          ###   ########.fr       */
+/*   Updated: 2025/12/14 15:49:37 by rmarkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,16 @@ int	ft_strcmp(char *str1, char *str2)
 	return (str1[i] - str2[i]);
 }
 
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
 void	ft_putstr(char *s)
 {
 	while (*s)
@@ -32,34 +42,29 @@ void	ft_putstr(char *s)
 	write(1, "\n", 1);
 }
 
-void	free_stack(t_stack **stack)
-{
-	t_stack	*temp;
-
-	if (!stack || !*stack)
-		return ;
-	while (*stack)
-	{
-		temp = (*stack)->next;
-		free(*stack);
-		*stack = temp;
-	}
-	*stack = NULL;
-}
-
-void	exit_with_error(t_stack **stack_a, t_stack **stack_b)
-{
-	if (stack_a && *stack_a)
-		free_stack(stack_a);
-	if (stack_b && *stack_b)
-		free_stack(stack_b);
-	write(2, "Error\n", 6);
-	exit(1);
-}
-
 int	ft_abs(int n)
 {
 	if (n < 0)
 		return (-n);
 	return (n);
+}
+
+char	*ft_strdup(const char *s)
+{
+	size_t	i;
+	char	*new_str;
+	size_t	s_len;
+
+	s_len = ft_strlen(s);
+	new_str = (char *)malloc(sizeof(char) * (s_len + 1));
+	if (!new_str)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		new_str[i] = s[i];
+		i++;
+	}
+	new_str[i] = '\0';
+	return (new_str);
 }

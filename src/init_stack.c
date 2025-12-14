@@ -6,7 +6,7 @@
 /*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 18:29:59 by rmarkov           #+#    #+#             */
-/*   Updated: 2025/12/10 18:30:01 by rmarkov          ###   ########.fr       */
+/*   Updated: 2025/12/14 16:49:43 by rmarkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,24 +44,27 @@ static void	add_back(t_stack **stack, t_stack *node)
 	temp->next = node;
 }
 
-t_stack	*init_stack(int argc, char **argv)
+void free_split(char **arr)
 {
-	t_stack		*stack;
-	t_stack		*new_node;
-	long int	num;
-	int			i;
+	int i = 0;
+	if (!arr)
+		return;
+	while (arr[i])
+		 free(arr[i++]);
+	free(arr);
+}
+
+
+t_stack *init_stack_from_args(char **args)
+{
+	t_stack *stack;
+	int		i;
 
 	stack = NULL;
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (args[i])
 	{
-		num = ft_atoi(argv[i]);
-		if (num < INT_MIN || num > INT_MAX)
-			exit_with_error(&stack, NULL);
-		new_node = create_node((int)num);
-		if (!new_node)
-			exit_with_error(&stack, NULL);
-		add_back(&stack, new_node);
+		add_back(&stack, create_node(ft_atoi(args[i])));
 		i++;
 	}
 	return (stack);

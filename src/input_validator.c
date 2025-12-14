@@ -6,7 +6,7 @@
 /*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 18:30:08 by rmarkov           #+#    #+#             */
-/*   Updated: 2025/12/10 18:30:10 by rmarkov          ###   ########.fr       */
+/*   Updated: 2025/12/14 17:40:38 by rmarkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,20 @@ static char	*normalize_number(char *str)
 	return (str);
 }
 
-static int	has_duplicates(char **args)
+static int	is_valid_num(char *str)
+{
+	if (!is_num(str))
+		return (0);
+	normalize_number(str);
+	return (1);
+}
+
+int	has_duplicates(char **args)
 {
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	while (args[i])
 	{
 		j = i + 1;
@@ -74,12 +82,11 @@ int	validate_input(char **args)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	while (args[i])
 	{
-		if (!is_num(args[i]))
+		if (!is_valid_num(args[i]))
 			return (0);
-		args[i] = normalize_number(args[i]);
 		i++;
 	}
 	if (has_duplicates(args))
