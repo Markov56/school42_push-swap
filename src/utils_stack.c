@@ -6,7 +6,7 @@
 /*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 18:41:47 by rmarkov           #+#    #+#             */
-/*   Updated: 2025/12/14 15:49:21 by rmarkov          ###   ########.fr       */
+/*   Updated: 2025/12/14 18:49:54 by rmarkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,10 @@ void	assign_sorted_indexes(t_stack *stack, int size)
 	while (index < size)
 	{
 		current = stack;
-		min_value = INT_MAX;
 		min_node = NULL;
 		while (current)
 		{
-			if (current->sorted_index == -1 && current->num < min_value)
+			if (current->sorted_index == -1 && (!min_node || current->num < min_node->num))
 			{
 				min_value = current->num;
 				min_node = current;
