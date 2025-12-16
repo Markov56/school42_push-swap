@@ -6,7 +6,7 @@
 /*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 18:29:59 by rmarkov           #+#    #+#             */
-/*   Updated: 2025/12/14 16:49:43 by rmarkov          ###   ########.fr       */
+/*   Updated: 2025/12/16 19:44:33 by rmarkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,6 @@ static void	add_back(t_stack **stack, t_stack *node)
 		temp = temp->next;
 	temp->next = node;
 }
-
-void free_split(char **arr)
-{
-	int i = 0;
-	if (!arr)
-		return;
-	while (arr[i])
-		 free(arr[i++]);
-	free(arr);
-}
-
 
 t_stack *init_stack_from_args(char **args)
 {

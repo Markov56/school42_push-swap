@@ -6,7 +6,7 @@
 /*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 18:25:01 by rmarkov           #+#    #+#             */
-/*   Updated: 2025/12/14 15:50:30 by rmarkov          ###   ########.fr       */
+/*   Updated: 2025/12/16 19:43:11 by rmarkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ void		execute_cheapest_move(t_stack **stack_a, t_stack **stack_b);
 int			find_min_index(t_stack *stack_a);
 void		update_current_index(t_stack **stack);
 char		**ft_split(char const *s, char c);
-char		**prepare_args(int argc, char **argv);
-void		free_split(char **split);
 size_t		ft_strlen(const char *s);
 t_stack		*init_stack_from_args(char **args);
 char		*ft_strdup(const char *s);

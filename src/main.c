@@ -6,24 +6,11 @@
 /*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 18:43:11 by rmarkov           #+#    #+#             */
-/*   Updated: 2025/12/14 19:23:23 by rmarkov          ###   ########.fr       */
+/*   Updated: 2025/12/16 19:43:23 by rmarkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	print_stack(t_stack *stack)
-{
-	t_stack	*tmp;
-
-	tmp = stack;
-	while (tmp)
-	{
-		printf("num: %d, sorted: %d, current: %d, target: %d, cost_a: %d, cost_b: %d\n", 
-			tmp->num, tmp->sorted_index, tmp->current_index, tmp->target_index, tmp->cost_a, tmp->cost_b);
-		tmp = tmp->next;
-	}
-}
 
 static void	push_swap(t_stack **stack_a, t_stack **stack_b, int size)
 {
@@ -35,7 +22,7 @@ static void	push_swap(t_stack **stack_a, t_stack **stack_b, int size)
 		big_sort(stack_a, stack_b);
 }
 
-void	free_args(char **split)
+static void	free_args(char **split)
 {
 	int	i;
 
@@ -50,7 +37,7 @@ void	free_args(char **split)
 	free(split);
 }
 
-char **prepare_args(int argc, char **argv)
+static char **prepare_args(int argc, char **argv)
 {
 	char	**args;
 	int		i;
@@ -86,7 +73,7 @@ int	main(int argc, char **argv)
 	if (!args || !validate_input(args))
 	{
 		write(2, "Error\n", 6);
-		free_split(args);
+		free_args(args);
 		return (1);
 	}
 	stack_a = init_stack_from_args(args);
@@ -96,6 +83,6 @@ int	main(int argc, char **argv)
 	push_swap(&stack_a, &stack_b, size);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
-	free_split(args);
+	free_args(args);
 	return (0);
 } 
