@@ -37,14 +37,13 @@ static void	free_args(char **split)
 	free(split);
 }
 
-static char **prepare_args(int argc, char **argv)
+static char	**prepare_args(int argc, char **argv)
 {
 	char	**args;
 	int		i;
 
 	if (argc == 2)
 		return (ft_split(argv[1], ' '));
-
 	args = malloc(sizeof(char *) * argc);
 	if (!args)
 		return (NULL);
@@ -85,4 +84,4 @@ int	main(int argc, char **argv)
 	free_stack(&stack_b);
 	free_args(args);
 	return (0);
-} 
+}

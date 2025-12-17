@@ -44,9 +44,9 @@ static void	add_back(t_stack **stack, t_stack *node)
 	temp->next = node;
 }
 
-t_stack *init_stack_from_args(char **args)
+t_stack	*init_stack_from_args(char **args)
 {
-	t_stack *stack;
+	t_stack	*stack;
 	int		i;
 
 	stack = NULL;

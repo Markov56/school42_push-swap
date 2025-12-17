@@ -63,7 +63,8 @@ void	assign_sorted_indexes(t_stack *stack, int size)
 		min_node = NULL;
 		while (current)
 		{
-			if (current->sorted_index == -1 && (!min_node || current->num < min_node->num))
+			if (current->sorted_index == -1 
+				&& (!min_node || current->num < min_node->num))
 				min_node = current;
 			current = current->next;
 		}

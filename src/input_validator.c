@@ -42,7 +42,7 @@ static int	is_int_range(char *str)
 	{
 		n = n * 10 + (*str - '0');
 		if ((sign == 1 && n > INT_MAX)
-			|| (sign == -1 && -n < INT_MIN))
+			|| (sign == -1 && - n < INT_MIN))
 			return (0);
 		str++;
 	}

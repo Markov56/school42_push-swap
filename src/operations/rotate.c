@@ -19,7 +19,6 @@ static void	rotate(t_stack **stack)
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
-
 	first = *stack;
 	*stack = first->next;
 	last = *stack;
@@ -36,7 +35,6 @@ static void	reverse(t_stack **stack)
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
-
 	last = *stack;
 	prev = NULL;
 	while (last->next)
